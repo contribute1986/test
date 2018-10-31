@@ -1,0 +1,6 @@
+node模块化
+1 拥有 require,exports,module.
+2 没有了define
+3 引用自定义模块
+   放到node_modules文件夹里
+   前面加./
