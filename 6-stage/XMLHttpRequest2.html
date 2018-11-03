@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      window.onload = function(){
+        let oBtn = document.getElementById("btn1");
+        oBtn.onclick = function(){
+            //1创建对象
+              let xhr = new XMLHttpRequest();
+              //alert(xhr.readyState);  //0
+            //2连接到服务器
+              xhr.open('GET','data/1.xml',true);
+              //  alert(xhr.readyState);  //1
+            //3发送
+            //xhr.send('body数据');
+              xhr.send();
+              //console.log('发送');
+            //4接收
+              xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                  if((xhr.status>=200 && xhr.status<300)||xhr.status == 304)
+                  {
+                    //let p = xhr.responseXML.getElementsByTagName('person')[0];
+                    //console.log(p.children);
+                    //  alert(xhr.responseXML);
+                       alert('成功');
+                  }else{
+                       alert('失败');
+                  }
+
+                }
+
+              };
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button"  value="按钮" id="btn1">
+
+  </body>
+</html>
